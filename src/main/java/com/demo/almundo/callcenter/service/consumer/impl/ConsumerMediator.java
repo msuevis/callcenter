@@ -7,4 +7,6 @@ package com.demo.almundo.callcenter.service.consumer.impl;
  * @since 1.0
  */
 public class ConsumerMediator {
+
+
 }
