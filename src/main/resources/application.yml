@@ -1,0 +1,22 @@
+##
+# SPRING CONFIGURATION
+##
+spring:
+  application:
+    name: Almundo CallCenter
+
+##
+# APLICATION CONFIGURATION
+##
+
+employee:
+  instanceOperator: 5
+  instanceSupervisor: 2
+  instanceDirector: 2
+
+##
+# CALLCENTER MAX CONCURRENT CALL
+callcenter:
+  maxconcurrenCall : 10
+
+
