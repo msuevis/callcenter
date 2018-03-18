@@ -1,9 +1,17 @@
 package com.demo.almundo.callcenter;
 
+import com.demo.almundo.callcenter.messaging.consumer.events.impl.DispatchCallEvent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+/**
+ *
+ * The main of callcenter project
+ *
+ * @author Miguel Angel Suevis Pacheco (miguelangelsuevis@gmail.com)
+ * @since 1.0
+ */
+@SpringBootApplication(scanBasePackages = {"com.payu.demo.almundo.callcenter"})
 public class CallcenterApplication {
 
 	public static void main(String[] args) {
