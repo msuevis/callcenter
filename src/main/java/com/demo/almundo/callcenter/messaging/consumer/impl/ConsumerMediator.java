@@ -1,4 +1,4 @@
-package com.demo.almundo.callcenter.service.consumer.impl;
+package com.demo.almundo.callcenter.messaging.consumer.impl;
 
 /**
  * class that abstracting the behavior of all types of employees

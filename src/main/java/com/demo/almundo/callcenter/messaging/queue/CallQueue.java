@@ -1,4 +1,4 @@
-package com.demo.almundo.callcenter.service.queue;
+package com.demo.almundo.callcenter.messaging.queue;
 
 import com.demo.almundo.callcenter.models.Call;
 import org.slf4j.Logger;
