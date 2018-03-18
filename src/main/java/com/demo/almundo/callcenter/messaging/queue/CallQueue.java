@@ -9,7 +9,7 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
- * In this class we will create a Concurrent Linked Queue and
+ * In this class we will create a Concurrent Linked MessageQueue and
  * submit/retrieve all the call from it.
  *
  * @author Miguel Angel Suevis Pacheco (miguelangelsuevis@gmail.com)
@@ -20,11 +20,11 @@ public class CallQueue{
     /** Default class logger*/
     private static final Logger LOGGER = LoggerFactory.getLogger(CallQueue.class);
 
-    /** Default call Queue to save call message */
+    /** Default call MessageQueue to save call message */
     private Queue<Call> concurrentCallQueue;
 
     /**
-     * Default constructor when called creates Queue implementation
+     * Default constructor when called creates MessageQueue implementation
      */
     public CallQueue(){
         concurrentCallQueue = new ConcurrentLinkedDeque<>();
@@ -32,7 +32,7 @@ public class CallQueue{
 
     /**
      * All the threads will call this method to insert the
-     * Messages in to the Concurrent Linked Queue.
+     * Messages in to the Concurrent Linked MessageQueue.
      *
      * @param call to add to the queue
      */
@@ -45,7 +45,7 @@ public class CallQueue{
      * Retrieves and removes the head of this queue, or returns
      * a optional if this queue is empty.
      *
-     * @return {@link Optional<Call>} element retrieve from Queue
+     * @return {@link Optional<Call>} element retrieve from MessageQueue
      */
     public Optional<Call> poll(){
 
