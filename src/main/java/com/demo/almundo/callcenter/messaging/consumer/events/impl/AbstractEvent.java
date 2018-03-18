@@ -1,6 +1,6 @@
-package com.demo.almundo.callcenter.messaging.consumer.event;
+package com.demo.almundo.callcenter.messaging.consumer.events.impl;
 
-import com.demo.almundo.callcenter.messaging.consumer.Event;
+import com.demo.almundo.callcenter.messaging.consumer.events.Event;
 
 /**
  *  A {@link AbstractEvent} class is a base class for defining custom behavior.
@@ -8,7 +8,7 @@ import com.demo.almundo.callcenter.messaging.consumer.Event;
  * @author Miguel Angel Suevis Pacheco (miguelangelsuevis@gmail.com)
  * @since 1.0
  */
-public class AbstractEvent implements Event{
+public abstract class AbstractEvent implements Event{
 
     /**
      * Return the event type as {@link Class} object.

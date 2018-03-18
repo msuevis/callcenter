@@ -1,4 +1,6 @@
-package com.demo.almundo.callcenter.messaging.consumer;
+package com.demo.almundo.callcenter.messaging.consumer.handlers;
+
+import com.demo.almundo.callcenter.messaging.consumer.events.Event;
 
 /**
  * This class handle different type of {@link Event}.

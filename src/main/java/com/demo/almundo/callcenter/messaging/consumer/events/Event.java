@@ -1,4 +1,4 @@
-package com.demo.almundo.callcenter.messaging.consumer;
+package com.demo.almundo.callcenter.messaging.consumer.events;
 
 /**
  *  A {@link Event} object is a specific event a asocciated a Handler.

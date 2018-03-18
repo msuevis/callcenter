@@ -3,6 +3,7 @@ package com.demo.almundo.callcenter.messaging.queue;
 import com.demo.almundo.callcenter.models.Call;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 import java.util.Queue;
@@ -15,6 +16,7 @@ import java.util.concurrent.ConcurrentLinkedDeque;
  * @author Miguel Angel Suevis Pacheco (miguelangelsuevis@gmail.com)
  * @since 1.0
  */
+@Component
 public class CallQueue{
 
     /** Default class logger*/
@@ -26,7 +28,7 @@ public class CallQueue{
     /**
      * Default constructor when called creates MessageQueue implementation
      */
-    public CallQueue(){
+    public CallQueue() {
         concurrentCallQueue = new ConcurrentLinkedDeque<>();
     }
 
