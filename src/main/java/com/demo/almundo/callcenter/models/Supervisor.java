@@ -8,6 +8,13 @@ package com.demo.almundo.callcenter.models;
  */
 public class Supervisor extends Employee{
 
-
+    /**
+     * Supervisor constructor from a builder instance
+     *
+     * @param builder The builder that contains all the information to create the Supervisor
+     */
+   protected Supervisor(Builder builder){
+       super(builder);
+   }
 
 }

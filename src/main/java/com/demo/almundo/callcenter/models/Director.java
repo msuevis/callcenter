@@ -8,6 +8,13 @@ package com.demo.almundo.callcenter.models;
  */
 public class Director extends Employee{
 
-
+    /**
+     * Director constructor from a builder instance
+     *
+     * @param builder The builder that contains all the information to create the Director
+     */
+    protected Director(Builder builder){
+        super(builder);
+    }
 
 }

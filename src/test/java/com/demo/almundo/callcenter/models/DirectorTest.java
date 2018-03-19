@@ -1,16 +1,16 @@
 package com.demo.almundo.callcenter.models;
 
-
 import org.testng.annotations.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Test cases fot {@linkplain Employee} entity
+ * Test cases fot {@linkplain Director} entity
  *
  * @author Miguel Angel Suevis Pacheco (miguelangelsuevis@gmail.com)
  * @since 1.0
  */
-public class EmployeeTest {
+public class DirectorTest {
 
     /**
      * If no data is provided to the builder, the instantiated amount entity must have all attributes as {@code null}
@@ -21,19 +21,19 @@ public class EmployeeTest {
     @Test
     public void testBuilderWithoutData() {
 
-        assertThat(Employee.create().build())
+        assertThat(Director.create().build())
                 .isNotNull()
-                .satisfies(employee -> {
-                    assertThat(employee.getIdentification()).isNotNull();
-                    assertThat(employee.getType()).isNull();
-                    assertThat(employee.getStatus()).isNull();
+                .satisfies(director -> {
+                    assertThat(director.getIdentification()).isNotNull();
+                    assertThat(director.getType()).isNull();
+                    assertThat(director.getStatus()).isNull();
                 });
 
     }
 
 
     /**
-     * Test that all the given parameters to the builder are set to the created Employee
+     * Test that all the given parameters to the builder are set to the created Director
      *
      * @author Miguel Angel Suevis (miguelangelsuevis@gmail.com)
      * @date 19/03/2018
@@ -43,20 +43,20 @@ public class EmployeeTest {
 
 
         final EmployeeStatus status =  EmployeeStatus.AVAILABLE;
-        final EmployeeType type = EmployeeType.OPERATOR;
+        final EmployeeType type = EmployeeType.DIRECTOR;
 
-        assertThat(Employee.create()
+        assertThat(Director.create()
                 .withStatus(status)
                 .withType(type)
                 .build())
                 .isNotNull()
-                .satisfies(employee -> {
-                    assertThat(employee.getIdentification())
+                .satisfies(director -> {
+                    assertThat(director.getIdentification())
                             .isNotNull();
-                    assertThat(employee.getType())
+                    assertThat(director.getType())
                             .isNotNull()
                             .isEqualTo(type);
-                    assertThat(employee.getStatus())
+                    assertThat(director.getStatus())
                             .isNotNull()
                             .isEqualTo(status);
                 });

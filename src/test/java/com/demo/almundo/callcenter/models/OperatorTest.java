@@ -1,16 +1,16 @@
 package com.demo.almundo.callcenter.models;
 
-
 import org.testng.annotations.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Test cases fot {@linkplain Employee} entity
+ * Test cases fot {@linkplain Operator} entity
  *
  * @author Miguel Angel Suevis Pacheco (miguelangelsuevis@gmail.com)
  * @since 1.0
  */
-public class EmployeeTest {
+public class OperatorTest {
 
     /**
      * If no data is provided to the builder, the instantiated amount entity must have all attributes as {@code null}
@@ -21,19 +21,19 @@ public class EmployeeTest {
     @Test
     public void testBuilderWithoutData() {
 
-        assertThat(Employee.create().build())
+        assertThat(Operator.create().build())
                 .isNotNull()
-                .satisfies(employee -> {
-                    assertThat(employee.getIdentification()).isNotNull();
-                    assertThat(employee.getType()).isNull();
-                    assertThat(employee.getStatus()).isNull();
+                .satisfies(operator -> {
+                    assertThat(operator.getIdentification()).isNotNull();
+                    assertThat(operator.getType()).isNull();
+                    assertThat(operator.getStatus()).isNull();
                 });
 
     }
 
 
     /**
-     * Test that all the given parameters to the builder are set to the created Employee
+     * Test that all the given parameters to the builder are set to the created Operator
      *
      * @author Miguel Angel Suevis (miguelangelsuevis@gmail.com)
      * @date 19/03/2018
@@ -45,18 +45,18 @@ public class EmployeeTest {
         final EmployeeStatus status =  EmployeeStatus.AVAILABLE;
         final EmployeeType type = EmployeeType.OPERATOR;
 
-        assertThat(Employee.create()
+        assertThat(Operator.create()
                 .withStatus(status)
                 .withType(type)
                 .build())
                 .isNotNull()
-                .satisfies(employee -> {
-                    assertThat(employee.getIdentification())
+                .satisfies(operator -> {
+                    assertThat(operator.getIdentification())
                             .isNotNull();
-                    assertThat(employee.getType())
+                    assertThat(operator.getType())
                             .isNotNull()
                             .isEqualTo(type);
-                    assertThat(employee.getStatus())
+                    assertThat(operator.getStatus())
                             .isNotNull()
                             .isEqualTo(status);
                 });
