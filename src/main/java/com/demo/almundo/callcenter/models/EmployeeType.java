@@ -11,14 +11,35 @@ public enum EmployeeType {
     /**
      * This is an individual at a Call center who is appointed for answering customer calls
      */
-    OPERATOR,
+    OPERATOR{
+
+        @Override
+        public int getPriority() {
+            return 10;
+        }
+    },
 
     /** This is the person in a Call center who provides additional support and technical knowledge to operator*/
-    SUPERVISOR,
+    SUPERVISOR {
+
+        @Override
+        public int getPriority() {
+            return 5;
+        }
+    },
 
     /**
      * This is a Employee who is responsible for budget execution, operation, business performance and overall direction of the Call centre management software.
      */
-    DIRECTOR;
+    DIRECTOR {
+
+        @Override
+        public int getPriority() {
+            return 1;
+        }
+    };
+
+    /** default method definition */
+    public abstract int getPriority();
 
 }
