@@ -17,6 +17,7 @@ employee:
 ##
 # CALLCENTER MAX CONCURRENT CALL
 callcenter:
-  maxconcurrenCall : 10
+  numConcurrenCall : 10
+
 
 
