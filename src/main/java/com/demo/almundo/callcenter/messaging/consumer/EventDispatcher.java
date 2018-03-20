@@ -3,7 +3,9 @@ package com.demo.almundo.callcenter.messaging.consumer;
 import com.demo.almundo.callcenter.messaging.consumer.events.Event;
 import com.demo.almundo.callcenter.messaging.consumer.handlers.Handler;
 import com.demo.almundo.callcenter.messaging.consumer.routers.DynamicRouter;
+import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -13,6 +15,7 @@ import java.util.Map;
  * @author Miguel Angel Suevis Pacheco (miguelangelsuevis@gmail.com)
  * @since 1.0
  */
+@Component
 public class EventDispatcher implements DynamicRouter<Event>{
 
 
@@ -20,10 +23,17 @@ public class EventDispatcher implements DynamicRouter<Event>{
     private Map<Class<? extends Event>, Handler<? extends Event>> handlers;
 
     /**
+     * default constructor
+     */
+    public EventDispatcher() {
+        handlers = new HashMap<>();
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override
-    public void registerChannel(final Class<? extends Event> eventType,final  Handler<? extends Event> handler) {
+    public void registerHandler(final Class<? extends Event> eventType,final  Handler<? extends Event> handler) {
 
         handlers.put(eventType,handler);
     }
@@ -36,7 +46,7 @@ public class EventDispatcher implements DynamicRouter<Event>{
 
         Handler<Event> handler = (Handler<Event>) handlers.get(event.getClass());
         if (handler != null) {
-            handler.dispatch(event);
+            handler.dispatchCall(event);
         }
     }
 }

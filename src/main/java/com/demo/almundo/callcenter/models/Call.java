@@ -23,6 +23,17 @@ public class Call {
     /** Maximun Call duration time */
     private static int MAX_CALL_TIME = 10;
 
+    /**
+     * Call constructor from a builder instance
+     *
+     * @param builder The builder that contains all the information to create the Call
+     */
+    private Call(Builder builder){
+
+        this.identification = builder.identification;
+        this.message =  builder.message;
+    }
+
 
     /**
      * Returns the call identifier
@@ -79,7 +90,7 @@ public class Call {
      *
      * @return time to the call
      */
-    public static int getRamdomCallDuration() {
+    public int getCallDuration() {
 
         return new Random().ints(MIN_CALL_TIME, MAX_CALL_TIME).findAny().getAsInt();
     }
@@ -108,15 +119,11 @@ public class Call {
         private String message;
 
         /**
-         * Sets the call model identifier (Same as the associated call identifier)
-         *
-         * @param identification The call
-         * @return This builder
+         * default constructor for builder class
          */
-        public Builder withIdentification(final String identification){
+        public Builder(){
 
-            this.identification = identification;
-            return this;
+            this.identification = UUID.randomUUID().toString();
         }
 
         /**
@@ -126,9 +133,18 @@ public class Call {
          */
         public Builder withMessage(final String message){
 
-            this.identification = UUID.randomUUID().toString();
             this.message = message;
             return this;
         }
+
+        /**
+         * Creates and returns a new {@linkplain Call} entity instance with the configured values
+         */
+        public Call build() {
+            return new Call(this);
+        }
+
     }
+
+
 }

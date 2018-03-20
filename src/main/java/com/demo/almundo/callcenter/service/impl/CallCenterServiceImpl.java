@@ -2,11 +2,13 @@ package com.demo.almundo.callcenter.service.impl;
 
 import com.demo.almundo.callcenter.messaging.producer.Producer;
 import com.demo.almundo.callcenter.messaging.producer.impl.CallProducer;
+import com.demo.almundo.callcenter.messaging.queue.CallQueue;
 import com.demo.almundo.callcenter.models.Call;
 import com.demo.almundo.callcenter.service.CallCenterService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,7 +18,7 @@ import org.springframework.stereotype.Service;
  * @author Miguel Angel Suevis Pacheco (miguelangelsuevis@gmail.com)
  * @since 1.0
  */
-@Service
+@Component
 public class CallCenterServiceImpl implements CallCenterService {
 
     /**
@@ -27,6 +29,7 @@ public class CallCenterServiceImpl implements CallCenterService {
     /** the producer class to send call to messaging system */
     @Autowired
     private Producer callProducer;
+
 
     /**
      * {@inheritDoc}

@@ -10,7 +10,7 @@ spring:
 ##
 
 employee:
-  instanceOperator: 5
+  instanceOperator: 6
   instanceSupervisor: 2
   instanceDirector: 2
 

@@ -16,5 +16,5 @@ public interface Handler<E extends Event>{
      *
      * @param event the {@link Event} to be handled
      */
-    void dispatch(E event);
+    void dispatchCall(E event);
 }

@@ -14,7 +14,7 @@ public enum EmployeeType {
     OPERATOR{
 
         @Override
-        public int getPriority() {
+        public Integer getPriority() {
             return 10;
         }
     },
@@ -23,7 +23,7 @@ public enum EmployeeType {
     SUPERVISOR {
 
         @Override
-        public int getPriority() {
+        public Integer getPriority() {
             return 5;
         }
     },
@@ -34,12 +34,12 @@ public enum EmployeeType {
     DIRECTOR {
 
         @Override
-        public int getPriority() {
+        public Integer getPriority() {
             return 1;
         }
     };
 
     /** default method definition */
-    public abstract int getPriority();
+    public abstract Integer getPriority();
 
 }

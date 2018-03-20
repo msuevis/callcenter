@@ -3,6 +3,7 @@ package com.demo.almundo.callcenter.models;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Comparator;
 import java.util.UUID;
 
 /**
@@ -11,7 +12,7 @@ import java.util.UUID;
  * @author Miguel Angel Suevis Pacheco (miguelangelsuevis@gmail.com)
  * @since 1.0
  */
-public class Employee {
+public class Employee implements Comparable<Employee>{
 
     /** Default class logger*/
     private static final Logger LOGGER = LoggerFactory.getLogger(Employee.class);
@@ -104,6 +105,17 @@ public class Employee {
                 ", type=" + type +
                 '}';
     }
+
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public int compareTo(Employee employee) {
+
+        return employee.getType().getPriority().compareTo(this.getType().getPriority());
+    }
+
 
     /**
      * Returns a new {@linkplain Builder Employee builder} instance

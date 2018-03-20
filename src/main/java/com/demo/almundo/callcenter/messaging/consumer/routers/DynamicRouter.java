@@ -18,7 +18,7 @@ public interface DynamicRouter <E extends Event>{
      * @param eventType The {@link Event} to be registered
      * @param handler   The {@link Handler} that will be handling the {@link Event}
      */
-    public void registerChannel(Class<? extends E> eventType, Handler<? extends E> handler);
+    public void registerHandler(Class<? extends E> eventType, Handler<? extends E> handler);
 
     /**
      * Dispatches an {@link Event} depending on it's type.
